@@ -8,8 +8,8 @@ async function run() {
     resolveConflictsProcess
   } = await boilerplateUpdate({
     remoteUrl: `git://github.com/gulpjs/.boilerplate`,
-    startVersion: `1.0.0`,
-    endVersion: `2.0.0`,
+    startVersion: `2.0.0`,
+    endVersion: `3.0.1`,
     resolveConflicts: true,
     wasRunAsExecutable: true,
   });
