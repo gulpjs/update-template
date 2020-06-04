@@ -9,7 +9,7 @@
   "repository": "gulpjs/update-template",
   "license": "MIT",
   "engines": {
-    "node": ">= 10"
+    "node": ">=10.13.0"
   },
   "main": "index.js",
   "bin": {
@@ -22,9 +22,7 @@
   "scripts": {
     "lint": "eslint .",
     "pretest": "npm run lint",
-    "test": "nyc mocha --async-only",
-    "azure-pipelines": "nyc mocha --async-only --reporter xunit -O output=test.xunit",
-    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+    "test": "nyc mocha --async-only"
   },
   "dependencies": {
     "boilerplate-update": "^0.37.5",
@@ -33,12 +31,20 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "coveralls": "github:phated/node-coveralls#2.x",
-    "eslint": "^2.13.1",
-    "eslint-config-gulp": "^3.0.1",
-    "expect": "^1.20.2",
-    "mocha": "^3.0.0",
-    "nyc": "^10.3.2"
+    "eslint": "^7.0.0",
+    "eslint-config-gulp": "^5.0.0",
+    "expect": "^26.0.1",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1"
+  },
+  "nyc": {
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
   },
   "keywords": []
 }
