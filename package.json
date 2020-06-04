@@ -27,7 +27,10 @@
     "coveralls": "nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "boilerplate-update": "^0.22.3"
+    "boilerplate-update": "^0.37.5",
+    "remote-git-tags": "^3.0.0",
+    "sver": "^1.8.3",
+    "yargs": "^15.3.1"
   },
   "devDependencies": {
     "coveralls": "github:phated/node-coveralls#2.x",
