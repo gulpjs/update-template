@@ -36,7 +36,7 @@ function guessStartTag() {
 
     // In 3.0.1, we didn`t check that the event was a push and that failed PRs
     if (!workflow.jobs.prettier.if) {
-      return `3.0.1`
+      return `3.0.1`;
     }
 
     const pkg = require(path.join(process.cwd(), `package.json`));
@@ -89,7 +89,7 @@ function opts(yargs) {
 async function guessTags(argv) {
   let startTag = argv.startTag;
   if (!startTag) {
-    startTag = guessStartTag()
+    startTag = guessStartTag();
   }
 
   let endTag = argv.endTag;
@@ -105,11 +105,11 @@ async function guessTags(argv) {
 
 async function run(argv) {
   if (!argv.startTag) {
-    return Promise.reject(`--start-tag is required & couldn't be guessed`)
+    return Promise.reject(`--start-tag is required & couldn't be guessed`);
   }
 
   if (!argv.endTag) {
-    return Promise.reject(`--end-tag is required & couldn't be guessed`)
+    return Promise.reject(`--end-tag is required & couldn't be guessed`);
   }
 
   var { promise: boilerplateUpdatePromise } = await boilerplateUpdate({
@@ -123,6 +123,6 @@ async function run(argv) {
   await boilerplateUpdatePromise;
 }
 
-yargs
-  .command(`$0`, `Update a gulp repository to our template`, opts, run, [guessTags])
-  .argv;
+yargs.command(`$0`, `Update a gulp repository to our template`, opts, run, [
+  guessTags,
+]).argv;
