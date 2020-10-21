@@ -117,7 +117,7 @@ async function run(argv) {
     startVersion: argv.startTag,
     endVersion: argv.endTag,
     resolveConflicts: {
-      stdio: 'inherit'
+      stdio: 'inherit',
     },
     wasRunAsExecutable: true,
   });
