@@ -116,7 +116,9 @@ async function run(argv) {
     remoteUrl: REMOTE_URL,
     startVersion: argv.startTag,
     endVersion: argv.endTag,
-    resolveConflicts: true,
+    resolveConflicts: {
+      stdio: 'inherit'
+    },
     wasRunAsExecutable: true,
   });
 

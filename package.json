@@ -25,7 +25,7 @@
     "test": "nyc mocha --async-only"
   },
   "dependencies": {
-    "boilerplate-update": "^0.37.5",
+    "@phated/boilerplate-update": "^0.37.5",
     "js-yaml": "^3.14.0",
     "remote-git-tags": "^3.0.0",
     "sver": "^1.8.3",
