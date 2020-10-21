@@ -1,6 +1,6 @@
 {
   "name": "@gulpjs/update-template",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Updates a gulpjs repository to match our current scaffold.",
   "author": "Gulp Team <team@gulpjs.com> (https://gulpjs.com/)",
   "contributors": [
