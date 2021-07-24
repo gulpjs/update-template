@@ -48,10 +48,16 @@ function guessStartTag() {
       // We forgot to remove .eslintignore and some other files so we check for that
       if (hasEslintignore) {
         return `3.0.2`;
-      } else {
-        return `3.0.3`;
       }
     }
+
+    const releaseWorkflow = fs.existsSync(`.github/workflows/release.yml`);
+    // In 3.1.0, we add the release.yml workflow file
+    if (!releaseWorkflow) {
+      return `3.0.3`;
+    }
+
+    return `3.1.0`;
   } catch (err) {
     console.error(err);
     return;
