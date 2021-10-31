@@ -10,6 +10,10 @@ const boilerplateUpdate = require(`boilerplate-update`);
 
 const REMOTE_URL = `git://github.com/gulpjs/.boilerplate`;
 
+function trimV(tag) {
+  return tag[0] === `v` ? tag.slice(1) : tag;
+}
+
 // This function makes assumption about the layout of .boilerplate
 // at specific tags to determine a starting point for updating
 function guessStartTag() {
@@ -70,7 +74,7 @@ async function guessEndTag() {
 
   for (const tag of tags.keys()) {
     // Trim a leading `v` from the tag
-    const version = tag[0] === `v` ? tag.slice(1) : tag;
+    const version = trimV(tag);
     versions.push(version);
   }
 
@@ -96,11 +100,15 @@ async function guessTags(argv) {
   let startTag = argv.startTag;
   if (!startTag) {
     startTag = guessStartTag();
+  } else {
+    startTag = trimV(startTag);
   }
 
   let endTag = argv.endTag;
   if (!endTag) {
     endTag = await guessEndTag();
+  } else {
+    endTag = trimV(endTag);
   }
 
   return {
