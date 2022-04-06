@@ -8,7 +8,7 @@ const { Semver } = require(`sver`);
 const remoteGitTags = require(`remote-git-tags`);
 const boilerplateUpdate = require(`boilerplate-update`);
 
-const REMOTE_URL = `git://github.com/gulpjs/.boilerplate`;
+const REMOTE_URL = `https://github.com/gulpjs/.boilerplate`;
 
 function trimV(tag) {
   return tag[0] === `v` ? tag.slice(1) : tag;
