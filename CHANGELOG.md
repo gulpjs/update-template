@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.2](https://www.github.com/gulpjs/update-template/compare/v0.3.1...v0.3.2) (2022-04-06)
+
+
+### Bug Fixes
+
+* Use https instead of unsupported git protocol ([70469b4](https://www.github.com/gulpjs/update-template/commit/70469b4a4c8fbfb0fade0593603c5af9396ba57a))
+
 ### [0.3.1](https://www.github.com/gulpjs/update-template/compare/v0.3.0...v0.3.1) (2021-10-31)
 
 
