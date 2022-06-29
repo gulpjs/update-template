@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.3.3](https://www.github.com/gulpjs/update-template/compare/v0.3.2...v0.3.3) (2022-06-29)
+
+
+### Bug Fixes
+
+* Fallback to 1.0.0 template if all others fail ([120996c](https://www.github.com/gulpjs/update-template/commit/120996c09e06c61e63b58c581f3c8e4b10757acf))
+
 ### [0.3.2](https://www.github.com/gulpjs/update-template/compare/v0.3.1...v0.3.2) (2022-04-06)
 
 
