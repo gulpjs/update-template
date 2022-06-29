@@ -63,8 +63,8 @@ function guessStartTag() {
 
     return `3.1.0`;
   } catch (err) {
-    console.error(err);
-    return;
+    // Always fallback to 1.0.0
+    return `1.0.0`;
   }
 }
 
