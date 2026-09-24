@@ -61,7 +61,11 @@ function guessStartTag() {
       return `3.0.3`;
     }
 
-    return `3.1.0`;
+    if (releaseWorkflow) {
+      return `3.1.0`;
+    }
+
+    return `4.0.0`;
   } catch (err) {
     // Always fallback to 1.0.0
     return `1.0.0`;
