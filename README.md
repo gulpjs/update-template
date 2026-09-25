@@ -12,8 +12,10 @@ Updates a gulpjs repository to match our current scaffold.
 
 ## Usage
 
+This is a command-line tool that normalizes all repositories in the gulpjs organization by applying git commits from our [.boilerplate] repository on top of the code that already exists. Running the command `update-template` with no flags will try to detect the version of [.boilerplate] is currently used and apply only the commits necessary. If detection fails or is incorrect, you can use the `--start-tag` and/or `--end-tag` flags explicitly.
+
 ```sh
-> update-template
+update-template
 ```
 
 ## Merge tool
@@ -38,6 +40,7 @@ None, exclusively used as a command-line tool.
 MIT
 
 <!-- prettier-ignore-start -->
+[.boilerplate]: https://github.com/gulpjs/.boilerplate
 [meld]: https://meldmerge.org/
 <!-- prettier-ignore-end -->
 
