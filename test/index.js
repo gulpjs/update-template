@@ -1,14 +1,13 @@
-var cp = require("child_process");
-var expect = require("expect");
+var cp = require("node:child_process");
+var assert = require("node:assert");
+var { describe, it } = require("node:test");
 
 var command = require.resolve("../");
 
 describe("update-template", function () {
   // Just a dummy test to make CI pass
-  it("prints help", function (done) {
-    this.timeout(10000);
+  it("prints help", { timeout: 10000 }, function () {
     var help = cp.spawnSync("node", [command, "--help"]);
-    expect(help.stdout).toBeDefined();
-    done();
+    assert(help.stdout);
   });
 });
