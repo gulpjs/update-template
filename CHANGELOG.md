@@ -1,5 +1,21 @@
 # Changelog
 
+## [1.0.0](https://github.com/gulpjs/update-template/compare/v0.3.3...v1.0.0) (2026-09-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* Normalize repository, dropping Node <22.15.0
+
+### Features
+
+* Support boilerplate v4.0.1 ([#9](https://github.com/gulpjs/update-template/issues/9)) ([0d0e3b6](https://github.com/gulpjs/update-template/commit/0d0e3b62f653408340804050b14fd3c240b3c611))
+
+
+### Miscellaneous Chores
+
+* Normalize repository, dropping Node &lt;22.15.0 ([0d0e3b6](https://github.com/gulpjs/update-template/commit/0d0e3b62f653408340804050b14fd3c240b3c611))
+
 ### [0.3.3](https://www.github.com/gulpjs/update-template/compare/v0.3.2...v0.3.3) (2022-06-29)
 
 
