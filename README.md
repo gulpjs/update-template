@@ -16,11 +16,30 @@ Updates a gulpjs repository to match our current scaffold.
 > update-template
 ```
 
+## Merge tool
+
+A merge tool should must set to resolve any merge conflicts encountered while applying the new boilerplate.
+
+If you use VSCode, you can specify:
+
+```
+git config --global merge.tool vscode
+git config --global mergetool.vscode.cmd 'code --wait --merge $REMOTE $LOCAL $BASE $MERGED'
+```
+
+Git supports vim and emacs out of the box, but you could also use [meld] as a standalone tool if you don't like any of those options.
+
 ## API
+
+None, exclusively used as a command-line tool.
 
 ## License
 
 MIT
+
+<!-- prettier-ignore-start -->
+[meld]: https://meldmerge.org/
+<!-- prettier-ignore-end -->
 
 <!-- prettier-ignore-start -->
 [downloads-image]: https://img.shields.io/npm/dm/@gulpjs/update-template.svg?style=flat-square
