@@ -6,12 +6,16 @@
   "contributors": [
     "Blaine Bublitz <blaine.bublitz@gmail.com> (https://github.com/phated)"
   ],
-  "repository": "gulpjs/update-template",
+  "funding": "https://github.com/sponsors/gulpjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gulpjs/update-template.git"
+  },
   "license": "MIT",
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">= 22.15.0"
   },
-  "main": "index.js",
+  "main": "./index.js",
   "bin": {
     "update-template": "index.js"
   },
@@ -20,6 +24,8 @@
     "LICENSE"
   ],
   "scripts": {
+    "format-check": "prettier . --check",
+    "format-write": "prettier . --write",
     "lint": "eslint .",
     "pretest": "npm run lint",
     "test": "nyc mocha --async-only"
@@ -32,21 +38,19 @@
     "yargs": "^15.3.1"
   },
   "devDependencies": {
-    "eslint": "^7.0.0",
-    "eslint-config-gulp": "^5.0.0",
+    "eslint": "10.11.0",
+    "eslint-config-gulp": "7.0.0",
     "eslint-plugin-node": "^11.1.0",
     "expect": "^27.0.0",
     "mocha": "^8.0.0",
-    "nyc": "^15.0.1"
+    "nyc": "^15.0.1",
+    "prettier": "3.9.6"
   },
   "nyc": {
     "reporter": [
       "lcov",
       "text-summary"
     ]
-  },
-  "prettier": {
-    "singleQuote": true
   },
   "keywords": []
 }
