@@ -47,9 +47,12 @@ async function guessStartTag() {
       return "3.0.1";
     }
 
-    const pkg = await import(path.join(process.cwd(), "package.json"), {
-      with: { type: "json" },
-    });
+    const { default: pkg } = await import(
+      path.join(process.cwd(), "package.json"),
+      {
+        with: { type: "json" },
+      }
+    );
 
     // In 3.0.2, we updated the node version in package.json but forgot to remove some unused files
     if (pkg.engines.node === ">=10.13.0") {
