@@ -128,6 +128,7 @@ async function guessTags(values) {
   let startTag = values["start-tag"];
   if (!startTag) {
     startTag = await guessStartTag();
+    console.log(`Guessed start-tag: ${startTag}`);
   } else {
     startTag = trimV(startTag);
   }
@@ -135,6 +136,7 @@ async function guessTags(values) {
   let endTag = values["end-tag"];
   if (!endTag) {
     endTag = await guessEndTag();
+    console.log(`Guessed end-tag: ${endTag}`);
   } else {
     endTag = trimV(endTag);
   }
