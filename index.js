@@ -7,6 +7,7 @@ const yargs = require(`yargs`);
 const { Semver } = require(`sver`);
 const remoteGitTags = require(`remote-git-tags`);
 const boilerplateUpdate = require(`boilerplate-update`);
+const { execSync } = require("child_process");
 
 const REMOTE_URL = `https://github.com/gulpjs/.boilerplate`;
 
@@ -61,7 +62,12 @@ function guessStartTag() {
       return `3.0.3`;
     }
 
-    return `3.1.0`;
+    if (releaseWorkflow) {
+      return `3.1.0`;
+    }
+
+    // 4.0.0 had a bug with repository metadata in package.json
+    return `4.0.1`;
   } catch (err) {
     // Always fallback to 1.0.0
     return `1.0.0`;
@@ -131,12 +137,20 @@ async function run(argv) {
     startVersion: argv.startTag,
     endVersion: argv.endTag,
     resolveConflicts: {
-      stdio: 'inherit',
+      stdio: "inherit",
     },
     wasRunAsExecutable: true,
   });
 
   await boilerplateUpdatePromise;
+
+  if (argv.endTag === `4.0.1`) {
+    console.log("fixing npm package...");
+    execSync("npm pkg fix");
+    console.log("updating lockfile...");
+    execSync("npm install --package-lock-only");
+    console.warn("you probably want to run `npm ci && npm run format-write`");
+  }
 }
 
 yargs.command(`$0`, `Update a gulp repository to our template`, opts, run, [
