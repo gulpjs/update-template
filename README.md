@@ -18,6 +18,8 @@ This is a command-line tool that normalizes all repositories in the gulpjs organ
 update-template
 ```
 
+If you resolve any merge conflicts, a file with the `.orig` extension will be created. You should delete these files, as they are just showing the previous conflict.
+
 ## Merge tool
 
 A merge tool should must set to resolve any merge conflicts encountered while applying the new boilerplate.
