@@ -32,9 +32,9 @@
   },
   "dependencies": {
     "boilerplate-update": "npm:@phated/boilerplate-update@^0.37.6",
-    "js-yaml": "^3.14.0",
-    "remote-git-tags": "^3.0.0",
-    "sver": "^1.8.3"
+    "js-yaml": "^4.3.2",
+    "remote-git-tags": "^4.0.0",
+    "sver": "^2.0.1"
   },
   "devDependencies": {
     "eslint": "10.11.0",
