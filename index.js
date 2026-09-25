@@ -34,7 +34,7 @@ async function guessStartTag() {
   // If we are in the 3.x release stream, tiny changes were made to the workflow.yml
   try {
     const devFile = fs.readFileSync(".github/workflows/dev.yml", "utf-8");
-    const workflow = yaml.safeLoad(devFile);
+    const workflow = yaml.load(devFile);
 
     // We started 3.0.0 with `on: [push, pull_request]` but quickly changed
     // to avoid running the workflow on pushing tags
