@@ -149,6 +149,7 @@ async function run(argv) {
     execSync("npm pkg fix");
     console.log("updating lockfile...");
     execSync("npm install --package-lock-only");
+    console.warn("you probably want to run `npm ci && npm run format-write`");
   }
 }
 
