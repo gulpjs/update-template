@@ -1,8 +1,8 @@
-var cp = require("node:child_process");
-var assert = require("node:assert");
-var { describe, it } = require("node:test");
+import cp from "node:child_process";
+import assert from "node:assert";
+import { describe, it } from "node:test";
 
-var command = require.resolve("../");
+var command = import.meta.resolve("../index.js");
 
 describe("update-template", function () {
   // Just a dummy test to make CI pass
