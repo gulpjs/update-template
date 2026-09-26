@@ -78,6 +78,7 @@ async function guessStartTag() {
     // 4.0.0 had a bug with repository metadata in package.json
     return "4.0.1";
   } catch (err) {
+    console.error(err);
     // Always fallback to 1.0.0
     return "1.0.0";
   }
@@ -158,7 +159,7 @@ async function run(values) {
       const leadingSpaces = Array.from(Array(config.spacing), () => " ").join(
         "",
       );
-      const trailingSpaces = config.type == "boolean" ? "" : " ";
+      const trailingSpaces = config.type === "boolean" ? "" : " ";
       help += "\n";
       help += `  --${flag}, -${config.short} ${leadingSpaces}[${config.type}]${trailingSpaces} ${config.describe}`;
     }
